@@ -1,0 +1,103 @@
+
+-----------------------------------------------
+#Schema
+
+CREATE SCHEMA `movieticketsbooking` ;
+------------------------------------------------
+
+#events
+
+INSERT INTO `movieticketsbooking`.`events` (`event_id`, `event_date`, `event_genre`, `event_hours`, `event_language`, `event_name`, `event_time`) VALUES ('100', '2021-04-12', 'Comedy', '2', 'English', 'Are you kidding me?', '09:00:00');
+ 
+#insert in post man 
+
+ JASON
+
+{
+    "eventName": "Open digi mic",
+    "eventGenre": "Science",
+    "eventHours": 1,
+    "eventLanguage": "English",
+    "eventDate": "2020-02-22",
+    "eventTime": "10:00:00",
+    "theaters": []
+}
+
+{
+    "eventName": "Jhonas roast",
+    "eventGenre": "Comedy",
+    "eventHours": 2,
+    "eventLanguage": "English",
+    "eventDate": "2021-12-22",
+    "eventTime": "12:30:00",
+    "theaters": []
+}
+
+
+--------------------------------------------
+
+#theaters
+
+
+INSERT INTO `movieticketsbooking`.`theaters` (`theatre_id`, `manager_contact`, `manager_name`, `seats`, `theatre_city`, `theatre_name`) VALUES ('1000', '9848618619', 'Arjun', '150', 'Vijayawada', 'Trendset');
+INSERT INTO `movieticketsbooking`.`theaters` (`theatre_id`, `manager_contact`, `manager_name`, `seats`, `theatre_city`, `theatre_name`) VALUES ('1001', '8519818818', 'Jungkook', '100', 'Vijayawada', 'Pvp');
+INSERT INTO `movieticketsbooking`.`theaters` (`theatre_id`, `manager_contact`, `manager_name`, `seats`, `theatre_city`, `theatre_name`) VALUES ('1002', '7894561230', 'Taehyung', '140', 'Hyderabad', 'Revathi');
+
+
+-------------------------------------------
+
+#events_theater_info
+
+INSERT INTO movieticketsbooking.events_theater_info VALUES(1000,100);
+INSERT INTO movieticketsbooking.events_theater_info VALUES(1000,102);
+INSERT INTO movieticketsbooking.events_theater_info VALUES(1002,103);
+INSERT INTO movieticketsbooking.events_theater_info VALUES(1001,101);
+
+--------------------------------------------
+
+#movies
+
+INSERT INTO `movieticketsbooking`.`movies` (`movie_id`, `movie_description`, `movie_genre`, `movie_hours`, `movie_language`, `movie_name`) VALUES ('200', 'Marvel', 'Action', '2', 'Telugu', 'SpidermanNWH');
+
+#insert in post man 
+
+ JASON
+
+{
+    "movieName": "Train to busan",
+    "movieGenre": "Thriller",
+    "movieHours": "1",
+    "movieLanguage": "English",
+    "movieDescription": "Zombies",
+    "theaters": []
+}
+
+
+{
+    "movieName": "Red Notice",
+    "movieGenre": "Comedy",
+    "movieHours": "2",
+    "movieLanguage": "Telugu",
+    "movieDescription": "Hiest",
+    "theaters": []
+}
+-----------------------------------------
+
+#movies_theater_info
+
+INSERT INTO movieticketsbooking.movies_theater_info VALUES(1000,200);
+INSERT INTO movieticketsbooking.movies_theater_info VALUES(1001,200);
+INSERT INTO movieticketsbooking.movies_theater_info VALUES(1002,202);
+INSERT INTO movieticketsbooking.movies_theater_info VALUES(1000,201);
+----------------------------------------------
+#getmovie
+
+{
+    "movieId": 200,
+    "movieName": "SpidermanNWH",
+    "movieGenre": "Action",
+    "movieHours": "2",
+    "movieLanguage": "Telugu",
+    "movieDescription": "Marvel",
+    "theaters": []
+}
