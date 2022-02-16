@@ -1,0 +1,209 @@
+
+-----------------------------------------------
+#Schema
+
+CREATE SCHEMA `movieticketsbooking` ;
+------------------------------------------------
+
+#events
+
+INSERT INTO `movieticketsbooking`.`events` (`event_id`, `event_date`, `event_genre`, `event_hours`, `event_language`, `event_name`, `event_time`) VALUES ('100', '2021-04-12', 'Comedy', '2', 'English', 'Are you kidding me?', '09:00:00');
+ 
+#insert in post man 
+ 
+ JASON
+
+{
+    "eventName": "Open digi mic",
+    "eventGenre": "Science",
+    "eventHours": 1,
+    "eventLanguage": "English",
+    "eventDate": "2020-02-22",
+    "eventTime": "10:00:00",
+    "theaters": []
+}
+
+{
+    "eventName": "Jhonas roast",
+    "eventGenre": "Comedy",
+    "eventHours": 2,
+    "eventLanguage": "English",
+    "eventDate": "2021-12-22",
+    "eventTime": "12:30:00",
+    "theaters": []
+}
+
+{
+    "eventName": "Are you ready",
+    "eventGenre": "Action",
+    "eventHours": 1,
+    "eventLanguage": "Telugu",
+    "eventDate": "2022-01-22",
+    "eventTime": "12:00:00",
+    "theaters": []
+}
+{
+    "eventName": "My terapy",
+    "eventGenre": "Health",
+    "eventHours": 1,
+    "eventLanguage": "Telugu",
+    "eventDate": "2022-02-13",
+    "eventTime": "09:40:00",
+    "theaters": []
+}
+{
+    "eventName": "Chalta hai",
+    "eventGenre": "Comedy",
+    "eventHours": 2,
+    "eventLanguage": "Hindi",
+    "eventDate": "2021-12-17",
+    "eventTime": "11:30:00",
+    "theaters": []
+}
+{
+    "eventName": "Chalta hai",
+    "eventGenre": "Comedy",
+    "eventHours": 2,
+    "eventLanguage": "Hindi",
+    "eventDate": "2021-12-17",
+    "eventTime": "11:30:00",
+    "theaters": []
+}
+--------------------------------------------
+
+#theaters
+
+
+INSERT INTO `movieticketsbooking`.`theaters` (`theatre_id`, `manager_contact`, `manager_name`, `seats`, `theatre_city`, `theatre_name`) VALUES ('1000', '9848618619', 'Arjun', '150', 'Vijayawada', 'Trendset');
+INSERT INTO `movieticketsbooking`.`theaters` (`theatre_id`, `manager_contact`, `manager_name`, `seats`, `theatre_city`, `theatre_name`) VALUES ('1001', '8519818818', 'Jungkook', '100', 'Vijayawada', 'Pvp');
+INSERT INTO `movieticketsbooking`.`theaters` (`theatre_id`, `manager_contact`, `manager_name`, `seats`, `theatre_city`, `theatre_name`) VALUES ('1002', '7894561230', 'Taehyung', '140', 'Hyderabad', 'Revathi');
+INSERT INTO `movieticketsbooking`.`theaters` (`theatre_id`, `manager_contact`, `manager_name`, `seats`, `theatre_city`, `theatre_name`) VALUES ('1003', '5478912365', 'Varun', '100', 'Guntur', 'G3');
+INSERT INTO `movieticketsbooking`.`theaters` (`theatre_id`, `manager_contact`, `manager_name`, `seats`, `theatre_city`, `theatre_name`) VALUES ('1004', '8798789754', 'Kamala', '350', 'Hyderabad', 'Central Mall');
+
+
+-------------------------------------------
+
+#events_theater_info
+
+INSERT INTO movieticketsbooking.events_theater_info VALUES(1000,100);
+INSERT INTO movieticketsbooking.events_theater_info VALUES(1000,102);
+INSERT INTO movieticketsbooking.events_theater_info VALUES(1002,103);
+INSERT INTO movieticketsbooking.events_theater_info VALUES(1001,101);
+INSERT INTO movieticketsbooking.events_theater_info VALUES(1004,105);
+INSERT INTO movieticketsbooking.events_theater_info VALUES(1003,103);
+INSERT INTO movieticketsbooking.events_theater_info VALUES(1004,104);
+INSERT INTO movieticketsbooking.events_theater_info VALUES(1000,105);
+
+--------------------------------------------
+
+#movies
+
+INSERT INTO `movieticketsbooking`.`movies` (`movie_id`, `movie_description`, `movie_genre`, `movie_hours`, `movie_language`, `movie_name`) VALUES ('200', 'Marvel', 'Action', '2', 'Telugu', 'SpidermanNWH');
+
+#insert in post man 
+
+ JASON
+
+"movieId": 200,
+
+{
+    "movieName": "Train to busan",
+    "movieGenre": "Thriller",
+    "movieHours": "1",
+    "movieLanguage": "English",
+    "movieDescription": "Zombies",
+    "theaters": []
+}
+
+
+{
+    "movieName": "Red Notice",
+    "movieGenre": "Comedy",
+    "movieHours": "2",
+    "movieLanguage": "Telugu",
+    "movieDescription": "Hiest",
+    "theaters": []
+}
+
+{
+    "movieName": "Rampage",
+    "movieGenre": "Action",
+    "movieHours": "2",
+    "movieLanguage": "English",
+    "movieDescription": "Scientific",
+    "theaters": []
+}
+{
+    "movieName": "Avengers End game",
+    "movieGenre": "SuperHero",
+    "movieHours": "1",
+    "movieLanguage": "English",
+    "movieDescription": "Marvel",
+    "theaters": []
+}
+{
+    "movieName": "Iron man",
+    "movieGenre": "SuperHero",
+    "movieHours": "1",
+    "movieLanguage": "Hindi",
+    "movieDescription": "Marvel",
+    "theaters": []
+}
+-----------------------------------------
+
+#movies_theater_info
+
+INSERT INTO movieticketsbooking.movies_theater_info VALUES(1000,200);
+INSERT INTO movieticketsbooking.movies_theater_info VALUES(1001,200);
+INSERT INTO movieticketsbooking.movies_theater_info VALUES(1002,202);
+INSERT INTO movieticketsbooking.movies_theater_info VALUES(1000,201);
+INSERT INTO movieticketsbooking.movies_theater_info VALUES(1003,205);
+INSERT INTO movieticketsbooking.movies_theater_info VALUES(1000,203);
+INSERT INTO movieticketsbooking.movies_theater_info VALUES(1004,204);
+----------------------------------------------
+#getmovie
+
+{
+    "movieId": 200,
+    "movieName": "SpidermanNWH",
+    "movieGenre": "Action",
+    "movieHours": "2",
+    "movieLanguage": "Telugu",
+    "movieDescription": "Marvel",
+    "theaters": []
+}
+
+
+--------------------------------------------------------------------
+
+#Customers
+
+#insert
+INSERT INTO `movieticketsbooking`.`customers` (`customer_id`, `age`, `customer_name`, `mobile_number`, `no_of_tickets`, `password`) VALUES ('300', '20', 'Sweatha', '9874587496', '5', 'abc');
+INSERT INTO `movieticketsbooking`.`customers` (`customer_id`, `age`, `customer_name`, `mobile_number`, `no_of_tickets`, `password`) VALUES ('301', '22', 'Mohith', '8745698725', '1', 'lkj');
+INSERT INTO `movieticketsbooking`.`customers` (`customer_id`, `age`, `customer_name`, `mobile_number`, `no_of_tickets`, `password`) VALUES ('302', '15', 'Deekshitha', '8519818818', '3', 'qwe');
+INSERT INTO `movieticketsbooking`.`customers` (`customer_id`, `age`, `customer_name`, `mobile_number`, `no_of_tickets`, `password`) VALUES ('303', '10', 'Suga', '9736010002', '8', 'bnm');
+INSERT INTO `movieticketsbooking`.`customers` (`customer_id`, `age`, `customer_name`, `mobile_number`, `no_of_tickets`, `password`) VALUES ('304', '25', 'Yaswanth', '7854126547', '2', 'hjk');
+---------------------------------
+JASON
+
+[
+    {
+        "customerId": 300,
+        "password": "abc",
+        "customerName": "Arun",
+        "mobileNumber": "7095697283",
+        "noOfTickets": 2,
+        "events": [],
+        "movies": []
+    },
+    {
+        "customerId": 301,
+        "password": "ghi",
+        "customerName": "Manoj",
+        "mobileNumber": "8364578925",
+        "noOfTickets": 1,
+        "events": [],
+        "movies": []
+    }
+]
